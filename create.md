@@ -2,6 +2,7 @@
 layout: page
 title: Create
 permalink: /create/
+order: 2
 body-class: create
 ---
 ## Design Principles Workshop
