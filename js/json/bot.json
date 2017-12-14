@@ -10,7 +10,7 @@ layout: null
 		],
 		"examples": [
       {% for example in site.examples %}
-			"{{ example.title | xml_escape }} by {{ example.author }} https://principles.design{{ example.url }}"
-		]{% if forloop.last %}{% else %},{% endif %}
+            "{{ example.title | jsonify}} by {{ example.author }} https://principles.design{{ example.url }}" 
+        ]{% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
 }
