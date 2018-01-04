@@ -1,5 +1,4 @@
 ---
-layout: example
 title: 8 Design Principles for Organizational Transformation
 author: Xplane
 overview: |
@@ -13,5 +12,5 @@ principles:
 - principle: Action
 - principle: Transparency
 - principle: Harmony
-- principle: Resilence
+- principle: Resilience
 ---

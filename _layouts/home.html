@@ -5,17 +5,44 @@
 
   <body class="home">
 
+
+
     {% include header.html %}
+        <div class="wrapper">
+        {% include info-block.html title="This site is an open source resource created to help us understand and write Design Principles." description=""%}
+
+
+
+
+      </div>
+          <div class="wrapper">
+
+            {% assign authors =  site.examples | map: 'author' | uniq %}
+            {% assign principles =  site.examples | map: 'principles' | join: '- principle:'  | split: '- principle:' | uniq %}
+            <p class="full h3 mtn">The collection contains:</p>
+            <div class="three-up">
+              <p class="h1 bold mtn mbn">{{ site.examples.size }}</p>
+              <p>Examples</p>
+            </div>
+            <div class="three-up">
+              <p class="h1 bold mtn mbn">{{ principles.size }}</p>
+              <p>Design Principles</p>
+            </div>
+            <div class="three-up">
+              <p class="h1 bold mtn mbn">{{ authors.size }}</p>
+              <p>Creators</p>
+            </div>
+          </div>
+
         <div class="wrapper">
         {% include info-block.html title="What are Design Principles?" description="Design Principles are a set of considerations that form the basis of any good product."%}
 
-        {% include info-block.html title="Why use them?" description="Design Principles help teams with decision making. A few simple principles or constructive questions will guide you towards making appropriate decisions." %}
+        {% include info-block.html title="Why use them?" description="Design Principles help teams with decision making. A few simple principles or constructive questions will guide your team towards making appropriate decisions." %}
 
-        {% include info-block.html title="Who use them?" description="Organisations, individuals and product teams have benefitted from writing and following their principles.<br>Here are a few examples:" %}
+        {% include info-block.html title="Who uses them?" description="Organisations, individuals and product teams have benefitted from writing and following their principles.<br>Here are a few examples:" %}
       </div>
 
           {% include block-grid-featured.html%}
-
 
     {% include footer.html %}
 

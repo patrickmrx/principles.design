@@ -7,13 +7,33 @@ body, html {
 }
 body {background: $primary;}
 .footer {
-  background: $white;
+  background: $linen;
 }
 a {
   color: $black;
   text-decoration: underline; // text-decoration-skip fallback
   text-decoration-skip: ink; // although this is pretty ugly
 
+}
+
+.two-up {
+  grid-column: auto / span 12;
+  @media (min-width: $mq-l) {
+    grid-column: auto / span 6;
+    }
+}
+
+.mbm {
+  margin-bottom: 0.6em;
+}
+.mbn {
+  margin-bottom: 0;
+}
+.mtn {
+  margin-top: 0;
+}
+.lhs {
+  line-height: 1.4;
 }
 a:hover {
   color: $secondary;
@@ -22,7 +42,7 @@ a:hover {
 .tile:hover {
   background: lighten($primary, 20%);
 }
-.tile a:hover {
+.tile a:hover, .tile-list a:hover {
   color: $black;
 }
 a.full-link {
@@ -45,13 +65,13 @@ hr {
 // p {max-width: 40em;} // test for legibility
 .site-logo {
   float: left;
+  display: block;
+}
+.site-logo a img {
   width: 4em;
   height: 4em;
-  display: block;
-  background: url(/images/design-principles-logo.svg) no-repeat top left;
-  background-size: 100% auto;
 }
-.site-logo:hover, .logo:hover {
+.site-logo:hover, .logo:hover, .view-toggle:hover, .view-toggle-list:hover {
   transform: scale(1.05);
   transition: all .2s ease-in-out;
 }
@@ -95,6 +115,22 @@ hr {
 
 .tdn {
   text-decoration: none;
+}
+
+.two-thirds {
+  grid-column: auto / span 12;
+  @media (min-width: $mq-m) {
+    grid-column: auto / span 8;
+    }
+}
+
+.three-up {
+  grid-column: auto / span 6;
+  position: relative;
+  @media (min-width: $mq-m) {
+    grid-column: auto / span 4;
+    margin-bottom: 1.6em;
+    }
 }
 .info-block, .post-content, article {
   grid-column: auto / span 12;
@@ -272,7 +308,7 @@ img.circle {
 // }
 
 .tile {
-  padding: 0.6em 0;
+  padding: 0.6em 0.2em;
   border-top: solid 8px $black;
   grid-column: auto / span 12;
   overflow: hidden;
@@ -283,6 +319,25 @@ img.circle {
   @media (min-width: $mq-l) {
         grid-column: auto / span 4;
       }
+}
+a.view-toggle {
+  width: 48px;
+  height: 48px;
+  float: right;
+  background: url(/images/list-view.svg) no-repeat top left;
+}
+a.view-toggle-list {
+  width: 48px;
+  height: 48px;
+  float: right;
+  background: url(/images/grid-view.svg) no-repeat top left;
+}
+.tile-list {
+  padding: 0.6em 0.2em;
+  border-top: solid 8px $black;
+  grid-column: auto / span 12;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 
@@ -301,17 +356,48 @@ input.search  {
         grid-column: auto / span 8;
       }
 }
+
+div.toggle {
+  display: none; //hidden on mob
+  @media (min-width: $mq-m) {
+        grid-column: auto / span 6;
+        display: block;
+      }
+  @media (min-width: $mq-l) {
+        grid-column: auto / span 4;
+      }
+}
 input.search::placeholder {
   color: $black;
   font-weight: normal;
 }
-.tile a {text-decoration: none;}
+.tile a, .tile-list a {text-decoration: none;}
 
 .tile:last-child {
   background: transparent;
 }
 
+input[type=text] {
+    padding: 0.4em 1em;
+    border: solid 2px $black;
+    color: $black;
+    height: 48px!important;
+}
 
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding: 0.4em 0.6em;
+    background:$primary;
+    border:0 none;
+    cursor:pointer;
+    border: solid 1px $black;
+}
+input[type=submit]:hover {
+  background: darken($primary, 5%);
+}
 
 
 // .ghost {
@@ -377,8 +463,7 @@ height: auto;
 }
 .site-footer {
   background: $white;
-  grid-column: auto / span 12;
-  margin-top: 1.6em;
+
 }
 // .site-footer p:first-child {
 //   font-size: 1.6em;
@@ -493,7 +578,8 @@ input, button, submit { border:none; }
 
 body.about nav a.about,
 body.create nav a.create,
-body.examples nav a.examples {
+body.examples nav a.examples,
+body.contribute nav a.contribute {
   text-decoration: underline;
 }
 .sr-only {
@@ -512,7 +598,6 @@ header h1 {
 }
 
 .credit {
-  border-top: solid 4px $black;
   border-bottom: solid 4px $black;
-  padding-bottom: 1.4em;
+  padding-bottom: 1em;
 }

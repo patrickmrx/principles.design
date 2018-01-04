@@ -15,7 +15,6 @@ Here's the template, copy it from here into a simple text editor of your choice.
 
 ```
 ---
-layout: example #ignore layout! :)
 title: #add title#
 author: #add author#
 overview:
@@ -107,7 +106,7 @@ New features and improvements are welcome but please submit a discussion thread 
 
  `author:` The company, team or individual that created these principles
 
- `link:` A link to a source article or somehwere the original principles were created.
+ `link:` A link to a source article or somewhere the original principles were created.
 
  `principles:`
 
