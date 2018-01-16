@@ -3,7 +3,7 @@ title: Airbnb's Design Principles
 link : https://airbnb.design/the-way-we-build/
 author: Airbnb
 featured: true
-overview:
+overview: Airbnb has experienced a lot of growth over the years. Currently our design department consists of nearly a dozen functions and outcome teams. It became clear that we needed more systematic ways to guide and leverage our collective efforts. We figured that the best way to begin was by tackling issues head on. Each of us focused on a screen or product area to redesign, And we established a few principles to guide us with these individual designs: 
 principles:
  - principle: Unified
    summary: Each piece is part of a greater whole and should contribute positively to the system at scale. There should be no isolated features or outliers.
